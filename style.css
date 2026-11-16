@@ -98,3 +98,19 @@ html{scroll-padding-top:72px}
 .caption {
   letter-spacing: 0.01em;
 }
+
+/* Убираем рамку при клике мышью */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Убираем рамку заголовка открытой заметки */
+#note-title:focus {
+  outline: none;
+}
+
+/* Убираем подсветку на мобильных устройствах */
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
