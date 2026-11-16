@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fff">
+  <meta name="description" content="Personal page">
+  <meta property="og:title" content="Andrey Gaiduk — Archive">
+  <meta property="og:description" content="Personal page">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Andrey Gaiduk — Archive">
+  <meta name="twitter:description" content="Personal page">
+  <title>Andrey Gaiduk — Archive</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="projects.js" defer></script>
+  <script src="vendor/marked.umd.js" defer></script>
+  <script src="markdown.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a class="wordmark" href="#projects" aria-label="На главную">Andrey Gaiduk</a>
+    <span class="header-note" id="header-subtitle">VISUAL ARCHIVE</span>
+    <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Открыть меню" aria-controls="nav" aria-expanded="false"><i></i><i></i><i></i></button>
+    <nav class="nav" id="nav" aria-label="Разделы сайта" hidden>
+      <a href="#projects" data-section="projects">Feed</a>
+      <a href="#notes" data-section="notes">Notes</a>
+      <a href="#about" data-section="about">About</a>
+      <a href="#contact" data-section="contact">Contact</a>
+      <div class="nav-note" id="nav-total">Total: 0 / 0</div>
+    </nav>
+  </header>
+  <main>
+    <section id="projects" class="section projects" aria-label="Проекты">
+      <div id="feed" class="feed"></div>
+      <p id="empty-feed" class="empty-feed" hidden>Здесь скоро появятся работы.</p>
+      <div id="sentinel" class="sentinel" aria-hidden="true"></div>
+      <footer id="feed-footer" class="archive-footer" hidden><span>10 / 10</span><span>END OF ARCHIVE</span><button id="top" type="button">↑ Наверх</button></footer>
+    </section>
+    <section id="notes" class="section notes-section" hidden>
+      <div id="notes-index">
+        <header class="notes-heading">
+          <h1 id="notes-title">Notes</h1>
+          <p id="notes-subtitle">Thoughts, observations and fragments.</p>
+        </header>
+        <div id="notes-list"></div>
+        <p id="empty-notes" class="empty-notes" hidden>No notes yet.</p>
+        <footer class="archive-footer notes-footer"><span id="notes-count">00 / 00</span><span>END OF NOTES</span></footer>
+      </div>
+      <article id="note-reader" class="note-reader" hidden>
+        <a class="note-back" href="#notes">← Notes</a>
+        <header class="reader-heading">
+          <p class="reader-meta" id="note-meta"></p>
+          <h1 id="note-title" tabindex="-1"></h1>
+          <p id="note-subtitle" class="reader-subtitle"></p>
+        </header>
+        <div class="reading-copy" id="note-body"></div>
+        <footer class="reader-footer"><a href="#notes">← All notes</a><button id="note-top" type="button">↑ Top</button></footer>
+      </article>
+    </section>
+    <section id="about" class="section profile-section" hidden>
+      <h1 class="section-heading">About</h1>
+      <div class="profile-layout" id="profile-layout">
+        <img id="about-photo" class="profile-photo" alt="" hidden>
+        <div><h2 id="about-name" class="profile-name"></h2><div id="about-body" class="reading-copy"></div></div>
+      </div>
+    </section>
+    <section id="contact" class="section contact-section" hidden>
+      <h1 class="section-heading">Contact</h1>
+      <dl id="contact-links" class="contact-list"></dl>
+    </section>
+  </main>
+  <dialog id="viewer" class="viewer" aria-label="Просмотр проекта">
+    <header class="project-header">
+      <button id="back-to-feed" class="back-to-feed" type="button">← Feed</button>
+      <span id="project-count" class="project-count"></span>
+      <button class="viewer-close" id="close-viewer" type="button" aria-label="Закрыть проект">×</button>
+    </header>
+    <article class="viewer-body">
+      <div class="project-intro">
+        <h1 id="project-title"></h1>
+        <p id="project-meta" class="viewer-meta"></p>
+        <span class="demo-label" id="demo-label" hidden>DEMO / ВЫМЫШЛЕННЫЙ ПРОЕКТ</span>
+      </div>
+      <div id="project-blocks" class="project-blocks"></div>
+      <footer class="project-footer">
+        <button id="prev" type="button">← Предыдущий</button>
+        <button id="project-top" type="button">↑ Наверх</button>
+        <button id="next" type="button">Следующий →</button>
+      </footer>
+    </article>
+  </dialog>
+</body>
+</html>
